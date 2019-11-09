@@ -1,6 +1,6 @@
 from turtle import*
 import turtle
-
+image = r"C:\Users\thamc\Downloads\Lunchlady_Dora.gif"
 screen = turtle.Screen()
 penup()
 goto(-300,-100)
@@ -141,7 +141,9 @@ def draw_menu(color,x,y):
 draw_menu('white',-270,-90)
 
 
-
+goto(100,-100)
+addshape(image)
+shape(image)
 answer = screen.textinput("Welcome to Canteen!", "Are you ready to order?")
 if answer is None or answer.lower().startswith('n'):
     print("Goodbye!")
