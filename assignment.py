@@ -7,6 +7,7 @@ screen = turtle.Screen()
 #maximize screen size
 screen.screensize()
 screen.setup(width = 1.0, height = 1.0)
+
 penup()
 goto(-300,-100)
 pendown()
@@ -37,7 +38,7 @@ def draw_bottom(color,x,y):
     fd(100)
     end_fill()
     
-draw_bottom('#e6a263',-300,-100)
+draw_bottom('#464646',-300,-100)
 
 #Middle section of canteen
 
@@ -57,7 +58,7 @@ def draw_middle(color,x,y):
     fd(460)
     end_fill()
     
-draw_middle('#fff2d1',-280,-99)
+draw_middle('#c0c0c0',-280,-99)
 
 #Top section of canteen
 
@@ -78,7 +79,7 @@ def draw_top(color,x,y):
     fd(500)
     end_fill()
     
-draw_top('#6e92ff',-300,100)
+draw_top('#2f4f4f',-300,100)
 
 #Canteen sign
 
@@ -99,11 +100,11 @@ def draw_sign(color,x,y):
     fd(300)
     end_fill()
     penup()
-    goto(-180,170)
-    pencolor('black')
+    goto(-150,115)
+    pencolor('#ffffff')
     write('Canteen',align='center',font=("Arial",48,'normal'))
     
-draw_sign('#ffffff',-280,160)
+draw_sign('#263f3f',-280,120)
 
 turtle = Turtle() # create the first turtle
 turtle.penup()
@@ -138,41 +139,41 @@ else:
         end_fill()
         penup()
         goto(-260,70)
-        pencolor('black')
+        pencolor('white')
         write('Sausage Roll',align='left',font=("Arial",15,'normal'))
-        goto(-50,70)
+        goto(-70,70)
         write('$2.50',align='left',font=("Arial",15,'normal'))
         goto(-260,50)
         write('Meat Pie',align='left',font=("Arial",15,'normal'))
-        goto(-50,50)
+        goto(-70,50)
         write('$3.00',align='left',font=("Arial",15,'normal'))
         goto(-260,30)
         write('Frozen juice cups',align='left',font=("Arial",15,'normal'))
-        goto(-50,30)
+        goto(-70,30)
         write('$1.00',align='left',font=("Arial",15,'normal'))
         goto(-260,10)
         write('Yoghurt sticks',align='left',font=("Arial",15,'normal'))
-        goto(-50,10)
+        goto(-70,10)
         write('$0.50',align='left',font=("Arial",15,'normal'))
         goto(-260,-10)
         write('Paddlepop sticks',align='left',font=("Arial",15,'normal'))
-        goto(-50,-10)
+        goto(-70,-10)
         write('$2.00',align='left',font=("Arial",15,'normal'))
         goto(-260,-30)
         write('Pizza singles',align='left',font=("Arial",15,'normal'))
-        goto(-50,-30)
+        goto(-70,-30)
         write('$1.50',align='left',font=("Arial",15,'normal'))
         goto(-260,-50)
         write('Burrito',align='left',font=("Arial",15,'normal'))
-        goto(-50,-50)
+        goto(-70,-50)
         write('$3.00',align='left',font=("Arial",15,'normal'))
         goto(-260,-70)
         write('Hash Brown',align='left',font=("Arial",15,'normal'))
-        goto(-50,-70)
+        goto(-70,-70)
         write('$1.00',align='left',font=("Arial",15,'normal'))
 
 
-draw_menu('white',-270,-90)
+draw_menu('black',-270,-80)
 
 goto(85,-80)
 addshape(image)
@@ -225,11 +226,15 @@ def draw_speech(color,x,y):
     turtle2.goto(200,10)
     turtle2.end_fill()
     turtle2.penup()
-    turtle2.goto(300,55)
-    turtle2.pencolor('black')
+    turtle2.goto(320,55)
+    
     global orderTotal
-    turtle2.write('  Your total is $'+str(orderTotal)+'0',align='center',font=("Arial",15,'normal'))
-   
+    if orderTotal > 0:
+        turtle2.pencolor('green')
+        turtle2.write('Your total is $'+str(orderTotal)+'0',align='center',font=("Arial",15,'normal'))
+    else:
+        turtle2.pencolor('red')
+        turtle2.write('Order not placed',align='center',font=("Arial",15,'normal')) 
     turtle2.goto(375,55)
        # turtle2.write(orderTotal,align='left',font=("Arial",20,'normal'))
     turtle2.setpos(0,0)
