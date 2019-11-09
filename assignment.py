@@ -2,6 +2,7 @@ from turtle import*
 import turtle
 #image = r"/Users/jesscharanjit/Documents/Lunchlady_Dora.gif" 
 image = r"C:\Users\thamc\Downloads\Lunchlady_Dora.gif"
+bgimage= r"C:\Users\thamc\Pictures\bandah.gif"
 
 screen = turtle.Screen()
 #maximize screen size
@@ -29,6 +30,7 @@ def draw_bottom(color,x,y):
     fillcolor(color)
     pencolor(color)
     begin_fill()
+    #bgpic(bgimage)
     fd(500)
     rt(90)
     fd(100)
@@ -199,8 +201,7 @@ else:
     takeOrder("Pizza Singles",1.50)
     takeOrder("Burrito",3.00)
     takeOrder("Hash Brown",1.00)
-    print("Order Total: $")
-    print(orderTotal)
+
 
 #Speech bubble appears, with customer's total cost
 
@@ -226,8 +227,7 @@ def draw_speech(color,x,y):
     turtle2.goto(200,10)
     turtle2.end_fill()
     turtle2.penup()
-    turtle2.goto(320,55)
-    
+    turtle2.goto(320,60)
     global orderTotal
     if orderTotal > 0:
         turtle2.pencolor('green')
@@ -235,11 +235,15 @@ def draw_speech(color,x,y):
     else:
         turtle2.pencolor('red')
         turtle2.write('Order not placed',align='center',font=("Arial",15,'normal')) 
+    turtle2.goto(320,35)
+    turtle2.pencolor('black')
+    turtle2.write('Click on screen to exit',align='center',font=("Arial",10,'normal')) 
     turtle2.goto(375,55)
        # turtle2.write(orderTotal,align='left',font=("Arial",20,'normal'))
     turtle2.setpos(0,0)
         
 draw_speech('#ffffff',200,10)
+exitonclick()
 mainloop()
 
         
