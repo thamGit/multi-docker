@@ -1,14 +1,13 @@
 from turtle import*
 import turtle
-#image = r"/Users/jesscharanjit/Documents/Lunchlady_Dora.gif"
-image = r"C:\Users\thamc\Downloads\Lunchlady_Dora.gif"
-bgimage = r"C:\Users\thamc\Pictures\bandah.gif"
+image = r"/Users/jesscharanjit/Documents/Lunchlady_Dora.gif"
+
+
 
 screen = turtle.Screen()
 # maximize screen size
 screen.screensize()
 screen.setup(width=1.0, height=1.0)
-
 penup()
 goto(-300, -100)
 pendown()
@@ -17,9 +16,7 @@ bgcolor('#A7A69D')
 
 class Order:
     orderTotal = 0
-
 # Quantity input, maximum value of each item is 5. Food price is multiplied by quantity to get total.
-
     def takeOrder(item, price):
         itemqty = screen.numinput(
             "Your order", item+" quantity:", minval=0, maxval=5)
@@ -28,8 +25,6 @@ class Order:
         Order.orderTotal = Order.orderTotal+(itemqty*price)
 
 # Bottom of canteen
-
-
 def draw_bottom(color, x, y):
     fillcolor(color)
     pencolor(color)
@@ -48,8 +43,6 @@ def draw_bottom(color, x, y):
 draw_bottom('#464646', -300, -100)
 
 # Middle section of canteen
-
-
 def draw_middle(color, x, y):
     penup()
     fillcolor(color)
@@ -70,8 +63,6 @@ def draw_middle(color, x, y):
 draw_middle('#c0c0c0', -280, -99)
 
 # Top section of canteen
-
-
 def draw_top(color, x, y):
     penup()
     fillcolor(color)
@@ -92,9 +83,59 @@ def draw_top(color, x, y):
 
 draw_top('#2f4f4f', -300, 100)
 
+# draw menu
+def draw_menu(color, x, y):
+    penup()
+    fillcolor(color)
+    goto(x, y)
+    pendown()
+    begin_fill()
+    rt(90)
+    fd(180)
+    rt(90)
+    fd(260)
+    rt(90)
+    fd(180)
+    rt(90)
+    fd(260)
+    end_fill()
+    penup()
+    goto(-260, 70)
+    pencolor('white')
+    write('Sausage Roll', align='left', font=("Arial", 15, 'normal'))
+    goto(-70, 70)
+    write('$2.50', align='left', font=("Arial", 15, 'normal'))
+    goto(-260, 50)
+    write('Meat Pie', align='left', font=("Arial", 15, 'normal'))
+    goto(-70, 50)
+    write('$3.00', align='left', font=("Arial", 15, 'normal'))
+    goto(-260, 30)
+    write('Frozen juice cups', align='left', font=("Arial", 15, 'normal'))
+    goto(-70, 30)
+    write('$1.00', align='left', font=("Arial", 15, 'normal'))
+    goto(-260, 10)
+    write('Yoghurt sticks', align='left', font=("Arial", 15, 'normal'))
+    goto(-70, 10)
+    write('$0.50', align='left', font=("Arial", 15, 'normal'))
+    goto(-260, -10)
+    write('Paddlepop sticks', align='left', font=("Arial", 15, 'normal'))
+    goto(-70, -10)
+    write('$2.00', align='left', font=("Arial", 15, 'normal'))
+    goto(-260, -30)
+    write('Pizza singles', align='left', font=("Arial", 15, 'normal'))
+    goto(-70, -30)
+    write('$1.50', align='left', font=("Arial", 15, 'normal'))
+    goto(-260, -50)
+    write('Burrito', align='left', font=("Arial", 15, 'normal'))
+    goto(-70, -50)
+    write('$3.00', align='left', font=("Arial", 15, 'normal'))
+    goto(-260, -70)
+    write('Hash Brown', align='left', font=("Arial", 15, 'normal'))
+    goto(-70, -70)
+    write('$1.00', align='left', font=("Arial", 15, 'normal'))
+
+
 # Canteen sign
-
-
 def draw_sign(color, x, y):
     penup()
     fillcolor(color)
@@ -136,58 +177,7 @@ if welcome is None or welcome.lower().startswith('n'):
     screen.bye()
 
 else:
-    def draw_menu(color, x, y):
-        penup()
-        fillcolor(color)
-        goto(x, y)
-        pendown()
-        begin_fill()
-        rt(90)
-        fd(180)
-        rt(90)
-        fd(260)
-        rt(90)
-        fd(180)
-        rt(90)
-        fd(260)
-        end_fill()
-        penup()
-        goto(-260, 70)
-        pencolor('white')
-        write('Sausage Roll', align='left', font=("Arial", 15, 'normal'))
-        goto(-70, 70)
-        write('$2.50', align='left', font=("Arial", 15, 'normal'))
-        goto(-260, 50)
-        write('Meat Pie', align='left', font=("Arial", 15, 'normal'))
-        goto(-70, 50)
-        write('$3.00', align='left', font=("Arial", 15, 'normal'))
-        goto(-260, 30)
-        write('Frozen juice cups', align='left', font=("Arial", 15, 'normal'))
-        goto(-70, 30)
-        write('$1.00', align='left', font=("Arial", 15, 'normal'))
-        goto(-260, 10)
-        write('Yoghurt sticks', align='left', font=("Arial", 15, 'normal'))
-        goto(-70, 10)
-        write('$0.50', align='left', font=("Arial", 15, 'normal'))
-        goto(-260, -10)
-        write('Paddlepop sticks', align='left', font=("Arial", 15, 'normal'))
-        goto(-70, -10)
-        write('$2.00', align='left', font=("Arial", 15, 'normal'))
-        goto(-260, -30)
-        write('Pizza singles', align='left', font=("Arial", 15, 'normal'))
-        goto(-70, -30)
-        write('$1.50', align='left', font=("Arial", 15, 'normal'))
-        goto(-260, -50)
-        write('Burrito', align='left', font=("Arial", 15, 'normal'))
-        goto(-70, -50)
-        write('$3.00', align='left', font=("Arial", 15, 'normal'))
-        goto(-260, -70)
-        write('Hash Brown', align='left', font=("Arial", 15, 'normal'))
-        goto(-70, -70)
-        write('$1.00', align='left', font=("Arial", 15, 'normal'))
-
-
-draw_menu('black', -270, -80)
+    draw_menu('black', -270, -80)
 
 goto(85, -80)
 addshape(image)
@@ -204,7 +194,7 @@ if answer is None or answer.lower().startswith('n'):
 # Food item and cost
 
 else:
-    print("Start!")
+    print("Start order!")
     Order.takeOrder("Sausage Rolls", 2.50)
     Order.takeOrder("Party Pies", 3.00)
     Order.takeOrder("Frozen juice cups", 1.00)
